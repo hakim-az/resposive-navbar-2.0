@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+:root {
+    --primary: #933ded;
+    --dark: #232323;
+    --pure: #fff;
+    --smoke: whitesmoke;
+    --dark-gray: #999;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    background: var(--dark);
+    color: var(--pure);
+}
+.container {
+    width: 1152px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+/* NAVBAR STYLE */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar ul.nav-list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+.navbar ul.nav-list li {
+    margin-left: 30px;
+    padding: 20px 0;
+    position: relative;
+}
+.navbar ul.nav-list li a {
+    color: var(--pure);
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all .5s ease-in-out;
+}
+@keyframes moveUp {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(20px); 
+    }
+}
+/* MOBILE NAV STYLE */
+.hamburger {
+    display: none;
+    z-index: 9999;
+}
+.mobile .hamburger {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    cursor: pointer;
+}
+.mobile .hamburger span {
+    background: var(--pure);
+    width: 28px;
+    height: 2px;
+    margin-bottom: 8px;
+}
+.mobile ul.nav-list {
+    background: -webkit-linear-gradient(45deg, #434343, #000000);
+    background: linear-gradient(45deg, #434343, #000000);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s ease-in-out;
+}
+.mobile ul.nav-list li {
+    margin-left: 0;
+    text-align: center;
+}
+.mobile ul.nav-list li a {
+    font-size: 20px;
+}
+.mobile ul.nav-list.open {
+    opacity: 1;
+    pointer-events: auto;  
+}
+.mobile .hamburger span {
+    transform-origin: left;
+    transition: all .3s ease-in-out;
+}
+
+
